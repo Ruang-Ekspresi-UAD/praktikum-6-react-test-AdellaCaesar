@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Display from './display'; // Pastikan Display diimpor
 
 const Counter = () => {
   const [count, setCount] = useState(0);
@@ -8,13 +9,10 @@ const Counter = () => {
 
   return (
     <div>
-      <h1 data-testid="counter-value">{count}</h1>
-      <button onClick={increment} data-testid="increment-button">
-        Increment
-      </button>
-      <button onClick={decrement} data-testid="decrement-button">
-        Decrement
-      </button>
+      {/* Gunakan komponen Display untuk menampilkan nilai count */}
+      <Display count={count} />
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
     </div>
   );
 };
